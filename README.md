@@ -1,13 +1,11 @@
 # Kahuna Product Management System
 
-
 ## Features
 
 - User Authentication System
   - Login/Signup functionality
   - Role-based access (Admin/User)
   - Token-based authentication
-  - Session management
 
 - Product Management
   - View product list
@@ -66,16 +64,16 @@
      - Start the Docker containers for the application
      - Set up the PHP development server
      - Configure the database connection
-     - Make the application available at http://localhost:8080
+     - Make the application available at http://localhost:8000
 
 3. Accessing the Application:
-   - Open your browser and navigate to http://localhost:8080
+   - Open your browser and navigate to http://localhost:8000
    - You'll be presented with the login page
    - Create a new account or use existing credentials to log in as 'user'
 
 4. Default Admin Account:
    - Username: admin
-   - Password: admin123
+   - Password: Admin
    - Use these credentials to access admin features
 
 ## API Endpoints
@@ -109,13 +107,6 @@
    - Can view products
    - Cannot add new products
 
-## Security Considerations
-
-- Passwords should be properly hashed in production
-- API tokens expire after 1 hour
-- All API endpoints require proper authentication
-- Input validation on both client and server side
-- CORS protection implemented
 
 
 

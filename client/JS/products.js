@@ -83,7 +83,7 @@ function displayProducts() {
         <tr>
             <th>Serial Number</th>
             <th>Name</th>
-            <th>Warranty Length (months)</th>
+            <th>Warranty Length (years)</th>
         </tr>
     `;
     table.appendChild(thead);
