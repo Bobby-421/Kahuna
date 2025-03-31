@@ -36,7 +36,13 @@ switch ($requestMethod) {
         $requestData = $_GET;
         break;
     case 'POST':
-        $requestData = $_POST;
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? $_SERVER["CONTENT_TYPE"] : '';
+        if (strpos($contentType, "application/json") !== false) {
+            $json = file_get_contents('php://input');
+            $requestData = json_decode($json, true) ?? [];
+        } else {
+            $requestData = $_POST;
+        }
         break;
     case 'PATCH':
         parse_str(file_get_contents('php://input'), $requestData);

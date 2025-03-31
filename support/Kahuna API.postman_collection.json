@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "f6365104-b3f6-43f1-84bd-028d132ef4be",
+		"name": "Kahuna API",
+		"description": "Collection for the Kahuna Product Management System API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5433144"
+	},
+	"item": [
+		{
+			"name": "Welcome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/kahuna/api",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"kahuna",
+						"api"
+					]
+				},
+				"description": "Get welcome message from the API"
+			},
+			"response": []
+		},
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"password123\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/kahuna/api/user",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"kahuna",
+						"api",
+						"user"
+					]
+				},
+				"description": "Register a new user"
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"testuser\",\n    \"password\": \"password123\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/kahuna/api/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"kahuna",
+						"api",
+						"login"
+					]
+				},
+				"description": "Login and get access token"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "X-API-USER",
+						"value": "{{user_id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/kahuna/api/product",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"kahuna",
+						"api",
+						"product"
+					]
+				},
+				"description": "Get all products (requires authentication)"
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-API-KEY",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "X-API-USER",
+						"value": "{{user_id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"serial\": \"PROD123\",\n    \"name\": \"Test Product\",\n    \"warrantyLength\": 12\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/kahuna/api/product",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"kahuna",
+						"api",
+						"product"
+					]
+				},
+				"description": "Add a new product (requires admin authentication)"
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "X-API-USER",
+						"value": "{{user_id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/kahuna/api/token",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"kahuna",
+						"api",
+						"token"
+					]
+				},
+				"description": "Check if the current token is valid"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "your_access_token_here",
+			"type": "string"
+		},
+		{
+			"key": "user_id",
+			"value": "your_user_id_here",
+			"type": "string"
+		}
+	]
+}
