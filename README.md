@@ -76,6 +76,10 @@
    - Password: Admin
    - Use these credentials to access admin features
 
+## Database Access
+login: localhost
+password: root
+
 ## API Endpoints
 
 - `POST /api/user`
