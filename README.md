@@ -107,7 +107,12 @@
    - Can view products
    - Cannot add new products
 
+## Postman Collection location
+- "sc-bed-finalproject-RobertFenechScerri\support\Kahuna API.postman_collection.json"
 
+## ERD Location
+- "sc-bed-finalproject-RobertFenechScerri\support\ERD.png"
+ 
 
 
 
